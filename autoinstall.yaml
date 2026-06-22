@@ -1,9 +1,9 @@
 autoinstall:
-  version: 1
-  codecs:
-    install: true
-  drivers:
-    install: true
+  version: 1
+  codecs:
+    install: true
+  drivers:
+    install: true
   packages:
     - flatpak
   snaps:
@@ -11,18 +11,18 @@ autoinstall:
     - name: code
     - name: chromium
   user-data:
-     users:
-       - name: codeur-admin
-         passwd: '$6$elL2TWiBMMeIYgUD$YdhedpNhBY6JtVQx9BUbksX8HVOvyi4yCG6RgBxYvWlSTyiLPydYLd1fdFb9vfLPNBSjwtZv9M7N0.u11muuN0'
-         groups: adm cdrom sudo dip plugdev users lpadmin lxd
-       - name: codeur-sup
-         passwd: '$y$j9T$TOsLeHX61DU2l8VhRYguV.$1NOwH7UPH7pNDjwOggyLlqaftU1Fgyc.OoYpHuVFLO20'
-         groups: users
-  keyboard:
-    layout: fr
-    variant: azerty
-  locale: fr_FR.UTF-8
-  timezone: Europe/Paris
+    users:
+      - name: codeur-admin
+        passwd: '$6$elL2TWiBMMeIYgUD$YdhedpNhBY6JtVQx9BUbksX8HVOvyi4yCG6RgBxYvWlSTyiLPydYLd1fdFb9vfLPNBSjwtZv9M7N0.u11muuN0'
+        groups: adm cdrom sudo dip plugdev users lpadmin lxd
+      - name: codeur-sup
+        passwd: '$y$j9T$TOsLeHX61DU2l8VhRYguV.$1NOwH7UPH7pNDjwOggyLlqaftU1Fgyc.OoYpHuVFLO20'
+        groups: users
+  keyboard:
+    layout: fr
+    variant: azerty
+  locale: fr_FR.UTF-8
+  timezone: Europe/Paris
   late-commands:
     - curtin in-target -- flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     - curtin in-target -- flatpak install flathub org.mobsya.ThymioSuite
