@@ -27,5 +27,5 @@ autoinstall:
     - curtin in-target -- flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     - curtin in-target -- flatpak install flathub org.mobsya.ThymioSuite
     # Cf https://www.thymio.org/fr/installation-sous-linux/
-    - curtin in-target -- echo 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0617", ATTRS{idProduct}=="000a", MODE="0666"' | sudo tee /etc/udev/rules.d/99-mobsya.rules && sudo udevadm control --reload-rules
+    - curtin in-target -- printf 'SUBSYSTEM=="usb", ATTRS{idVendor}=="0617", ATTRS{idProduct}=="000a", MODE="0666"\nSUBSYSTEM=="usb", ATTRS{idVendor}=="0617", ATTRS{idProduct}=="000c", MODE="0666"\n' | sudo tee /etc/udev/rules.d/99-mobsya.rules && sudo udevadm control --reload-rules
     - curtin in-target -- flatpak install flathub edu.mit.Scratch
