@@ -6,6 +6,7 @@ autoinstall:
     install: true
   packages:
     - flatpak
+    - git
   snaps:
     - name: libreoffice
     - name: code
