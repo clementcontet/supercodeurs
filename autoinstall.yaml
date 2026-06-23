@@ -1,3 +1,4 @@
+#cloud-config
 autoinstall:
   version: 1
   codecs:
@@ -12,14 +13,18 @@ autoinstall:
     - name: code
       classic: true
     - name: chromium
+  identity:
+    hostname: super-codeurs
+    username: codeur-admin
+    password: "$6$NC9BGiuKLATCuVSF$kY5lHr/0yLjXqkJdxZfaTWTbBGI3neQqdRPEjIrGePg9xXDZqIt8nKhtvemmy1U44nQcz/H/cdDym6HKRW6KX/"
   user-data:
     users:
-      - name: codeur-admin
-        passwd: '$6$elL2TWiBMMeIYgUD$YdhedpNhBY6JtVQx9BUbksX8HVOvyi4yCG6RgBxYvWlSTyiLPydYLd1fdFb9vfLPNBSjwtZv9M7N0.u11muuN0'
-        groups: adm cdrom sudo dip plugdev users lpadmin lxd
       - name: codeur-sup
-        passwd: '$y$j9T$TOsLeHX61DU2l8VhRYguV.$1NOwH7UPH7pNDjwOggyLlqaftU1Fgyc.OoYpHuVFLO20'
-        groups: users
+        gecos: codeur-sup
+        groups: [users]
+        shell: /bin/bash
+        lock_passwd: false
+        passwd: "$6$ggqZrlQCFf.58g6e$o01kyIbBCUIf9QND.fKsJp7nUpt0k/FS/YuIndqy3yQlzW0IMFFTKiVdaOuSMFXkXpx0C2aZPoyU.uxRB/7II."
   keyboard:
     layout: fr
     variant: azerty
