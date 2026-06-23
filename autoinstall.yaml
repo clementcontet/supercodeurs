@@ -10,6 +10,7 @@ autoinstall:
   snaps:
     - name: libreoffice
     - name: code
+      classic: true
     - name: chromium
   user-data:
     users:
